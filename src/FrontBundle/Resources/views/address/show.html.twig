@@ -1,0 +1,113 @@
+{% extends 'FrontBundle::layout_logged.html.twig' %}
+{% block page_title %}AddressBook - Affichage contact{% endblock %}
+{% block meta_description %}Affichage d'un contact dans le carnet d'adresse.{% endblock %}
+{% block meta_keywords %}carnet adresse, notebook, vcard, addresses online, contact{% endblock %}
+{% block content_page %}
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="box">
+                <div class="box-header">
+                    <h2>
+                        <i class="fa fa-gears"></i>
+                        <span class="break">Statut</span>
+                    </h2>
+                </div>
+                <div class="box-content">
+                    <div class="text-center">
+                        {% if address.state == 'registered' %}
+                        <span class="label label-success"><i class="fa fa-check"></i> Membre</span>
+                        {% else %}
+                        <span class="label label-danger"><i class="fa fa-lock"></i> Non membre</span>
+                        {% endif %}
+                        {% if address.state == 'invite' %}
+                            <span class="label label-success"><i class="fa fa-check"></i> Invité</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="box">
+                <div class="box-header">
+                    <h2>
+                        <i class="fa fa-gears"></i>
+                        <span class="break">Actions</span>
+                    </h2>
+                </div>
+                <div class="box-content">
+                    {% if address.state == 'unregistered' %}
+                        <form action="{{ path('front_address_invite', {id: address.id}) }}"
+                              method="POST" class="form-inline" data-action="confirm-submission"
+                              data-confirmation-message="{{ "Envoyer une invitation ?" }}">
+                            <input name="_token" type="hidden" value="{{ csrf_token('address_invite') }}">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="fa fa-gift"></i> Inviter
+                            </button>
+                        </form>
+                    {% endif %}
+                    <a href="{{ path('front_address_edit', {id: address.id}) }}" class="btn btn-sm btn-warning">
+                        <i class="fa fa-pencil"></i> Editer
+                    </a>
+                    <form action="{{ path('front_address_delete', {id: address.id}) }}"
+                          method="POST" class="form-inline" data-action="confirm-submission"
+                          data-confirmation-message="{{ "Supprimer le contact ?" }}">
+                        <input name="_token" type="hidden"
+                               value="{{ csrf_token('address_delete') }}">
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fa fa-close"></i> Supprimer
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="box-header">
+                    <h2>
+                        <i class="fa fa-user"></i>
+                        <span class="break">Détails contact</span>
+                    </h2>
+                </div>
+                <div class="box-content">
+                    <div class="form-group clearfix">
+                        <label class="control-label">
+                            <span>Prénom :</span>
+                        </label>
+                        <span>{{ address.prenom }}</span>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="control-label">
+                            <span>Nom :</span>
+                        </label>
+                        <span>{{ address.nom }}</span>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="control-label">
+                            <span>Email :</span>
+                        </label>
+                        <span>{{ address.email }}</span>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="control-label">
+                            <span>Téléphone :</span>
+                        </label>
+                        <span>{{ address.telephone }}<span>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="control-label">
+                            <span>Ajouté le :</span>
+                        </label>
+                        <span>{{ address.createdAt|date("d/m/Y") }}</span>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ path('front_address_index') }}" class="btn btn-md btn-info">
+                <i class="fa fa-arrow-left"></i> Retour
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block head %}{% endblock %}
+    <meta charset="UTF-8">
+    <title>{% block page_title %}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords%}{% endblock %}">
+    {% block javascripts_header %}
+        {% javascripts
+        'assets/vendor/modernizr/modernizr.js'
+        'assets/vendor/yepnope/yepnope.1.5.4-min.js'
+        filter='?uglifyjs2'
+        combine=true
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+    {% endblock %}
+    {% block stylesheet_head '' %}
+    <link href="{{ asset('favicon.ico') }}" type="image/x-icon" rel="icon">
+
+</head>
+<body class="{% block body_class '' %}" id="{% block body_id '' %}" style="{% block body_style '' %}">
+{% block body %}{% endblock %}
+
+{% block javascripts_footer '' %}
+</body>
+</html>

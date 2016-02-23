@@ -1,0 +1,49 @@
+password_recovery:
+    action:
+        recover: Retrouver mon mot de passe
+        update: Mettre à jour mon mot de passe
+    info:
+        email_sent: |
+            Un e-mail avec les instructions pour retrouver votre mot de passe a été envoyé à %email%.
+
+            Si vous ne l'avez pas reçu dans quelques minutes, vérifiez votre dossier de spam.
+        fill_in_email: Entrez votre adresse e-mail, et nous vous enverrons un e-mail avec les instructions pour mettre à jour votre mot de passe.
+        fill_in_new_password: Définissez votre nouveau mot de passe ci-dessous.
+    label:
+        email: E-mail
+        username: Nom d'utilisateur
+    title: Mot de passe oublié
+
+registration:
+    action:
+        go_to_app: Aller sur le site
+        register: S'inscrire
+    info:
+        account_activated: Votre compte est maintenant activé.
+        have_account: Déjà inscrit ?
+        subscription_saved: Nous avons bien reçu votre e-mail et nous vous informerons dès notre lancement.
+    label:
+        first_name: Prénom
+        last_name: Nom de famille
+    title:
+        confirm: Enregistrement
+        confirmed: Félicitations %username% !
+        register: S'inscrire
+        registered: Félicitations !
+
+resetting:
+    password_already_requested: Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.
+
+security:
+    action:
+        forgot_password: Mot de passe oublié ?
+        log_in: Connexion
+        log_out: Déconnexion
+        signup: S'inscrire
+    label:
+        remember_me: Se souvenir de moi
+    placeholder:
+        email: Email
+        password: Mot de passe
+    title:
+        log_in: Connexion

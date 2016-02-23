@@ -1,0 +1,66 @@
+/*!
+* Author: Łukasz Holeczek
+* Template: SimpliQ - Flat & Responsive Bootstrap Admin Template
+* Version: 2.1.0 
+* Bootstrap version: 3.0.0
+* Copyright 2013 creativeLabs
+* www: http://bootstrapmaster.com
+* mail: lukasz@bootstrapmaster.com
+* You can buy this theme on WrapBootstrap: https://wrapbootstrap.com/theme/simpliq-flat-responsive-admin-template-WB0N1X0T1
+* You can find our other themes on: https://bootstrapmaster.com
+*/
+// Import External CSS Files
+//===================================================================
+@import "scss/_import";
+
+// Import SASS Files
+//===================================================================
+@import "scss/_colors";
+@import "scss/_mixins";
+@import "scss/_main";
+@import "scss/_header";
+@import "scss/_navigation";
+@import "scss/_buttons";
+@import "scss/_tabs";
+@import "scss/_forms";
+@import "scss/_notifications_labels";
+@import "scss/_modal";
+@import "scss/_footer";
+
+// My Custom Styles
+//===================================================================
+@import "scss/_charts";
+@import "scss/_smallstats";
+@import "scss/_discussions";
+@import "scss/_chat";
+@import "scss/_calendar";
+@import "scss/_dashboard-list";
+@import "scss/_tickets";
+@import "scss/_todo";
+@import "scss/_sliders_progress_bars";
+@import "scss/_quick-buttons";
+@import "scss/_circle-stats";
+@import "scss/_others";
+@import "scss/_switch-input";
+
+// Components
+//===================================================================
+@import "scss/_datatables";
+@import "scss/_justgage";
+@import "scss/_nestable";
+@import "scss/_wizard";
+@import "scss/_datepicker";
+@import "scss/_timepicker";
+@import "scss/_daterangepicker";
+@import "scss/_colorpicker";
+
+// Example Pages
+//===================================================================
+@import "scss/_page-inbox";
+@import "scss/_page-todo";
+@import "scss/_page-profile";
+@import "scss/_page-login";
+
+// Responsive
+//===================================================================
+@import "scss/_responsive";

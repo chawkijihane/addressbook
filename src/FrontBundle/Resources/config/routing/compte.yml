@@ -1,0 +1,7 @@
+front_compte_index:
+    path:  /
+    defaults: { _controller: FrontBundle:Compte:index }
+
+front_inscription_profil:
+    path:  /inscription/suivant
+    defaults: { _controller: FrontBundle:Inscription:createProfil }

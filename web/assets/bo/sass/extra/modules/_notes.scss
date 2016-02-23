@@ -1,0 +1,22 @@
+// ------------------------------
+// Note Module
+// ------------------------------
+
+
+// Note types
+// ------------------------------
+.note-danger {
+    background-color: $state-danger-bg;
+    border-left: 5px solid $state-danger-text;
+    color: $state-danger-text;
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+}
+
+.note-info {
+    background-color: $state-info-bg;
+    border-left: 5px solid $state-info-text;
+    color: $state-info-text;
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+}

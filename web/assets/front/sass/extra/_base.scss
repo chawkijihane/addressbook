@@ -1,0 +1,16 @@
+// ------------------------------
+// - Base Rules
+// ------------------------------
+
+html,
+body {
+    height: 100%;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+*{
+    box-sizing: border-box;
+}

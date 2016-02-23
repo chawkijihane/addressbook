@@ -1,0 +1,26 @@
+// ------------------------------
+// Collection Module
+// ------------------------------
+
+// Core
+// -------------------------
+.collection-actions-absolute {
+    .form-group {
+        position: relative;
+    }
+
+    .collection-item-actions {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+}
+
+.collection-item-actions {
+    float: right;
+    margin: 2px 2px 0 0;
+
+    > button {
+        margin-left: 2px;
+    }
+}

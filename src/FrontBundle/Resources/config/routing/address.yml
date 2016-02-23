@@ -1,0 +1,36 @@
+front_address_index:
+    path:  /
+    defaults: { _controller: FrontBundle:Address:index }
+    methods: GET
+
+front_address_add:
+    path:  /add
+    defaults: { _controller: FrontBundle:Address:add }
+
+front_address_show:
+    path:  /{id}
+    defaults: { _controller: FrontBundle:Address:show }
+    methods: GET
+    requirements:
+        id: \d+
+
+front_address_invite:
+    path:  /{id}/invite
+    defaults: { _controller: FrontBundle:Address:invite }
+    methods: POST
+    requirements:
+        id: \d+
+
+front_address_delete:
+    path:  /{id}/delete
+    defaults: { _controller: FrontBundle:Address:delete }
+    methods: POST
+    requirements:
+        id: \d+
+
+front_address_edit:
+    path:  /{id}/edit
+    defaults: { _controller: FrontBundle:Address:edit }
+    methods: [GET, POST]
+    requirements:
+        id: \d+

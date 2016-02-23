@@ -1,0 +1,15 @@
+front_index:
+    path:  /
+    defaults: { _controller: FrontBundle:Front:index }
+
+front_compte:
+    resource: routing/compte.yml
+    prefix: /mon-compte
+
+front_profil:
+    resource: routing/profil.yml
+    prefix: /profil
+
+front_address:
+    resource: routing/address.yml
+    prefix: /address

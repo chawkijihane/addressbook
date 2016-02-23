@@ -1,0 +1,126 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <ul class="list list-unstyled js-errors errors">
+                {% for error in errors %}
+                    <li class="item">
+                        {{ error.message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+{% block form_label %}
+    {% spaceless %}
+        {% if label is not same as(false) %}
+            {% if not compound %}
+                {% set label_attr = label_attr|merge({'for': id}) %}
+            {% endif %}
+            {% if required %}
+                {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+            {% endif %}
+            {% if label is empty %}
+                {% set label = name|humanize %}
+            {% endif %}
+           <div class="ft_blue"> <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label></div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_label %}
+
+{% block form_row %}
+    {% spaceless %}
+        <div class="row">
+            <div class="form-group{% if errors is not empty %} has-errors{% endif %}">
+                {{ form_label(form) }}
+                {{ form_widget(form) }}  {{ form_errors(form) }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block collection_widget %}
+    {% set attr = attr|merge({'data-widget': 'collection'}) %}
+
+    {% if allow_add %}
+        {% set attr = attr|merge({'data-collection-allow-add': allow_add}) %}
+    {% endif %}
+
+    {% if allow_delete %}
+        {% set attr = attr|merge({'data-collection-allow-delete': allow_delete}) %}
+    {% endif %}
+
+    {% if add_button_text is not null %}
+        {% set attr = attr|merge({'data-collection-add-button-text': add_button_text|trans({}, translation_domain)}) %}
+    {% endif %}
+
+    {% if remove_button_title is not null %}
+        {% set attr = attr|merge({'data-collection-remove-button-title': remove_button_title|trans({}, translation_domain)}) %}
+    {% endif %}
+
+    {% if prototype is defined %}
+        {% set attr = attr|merge({'data-prototype-name': prototype.vars.name }) %}
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block choice_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            <div  {{ block('widget_container_attributes') }}>
+                {% for child in form %}
+                    {{ form_widget(child) }}
+                {% endfor %}
+            </div>
+        {% else %}
+            <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+                {% if empty_value is not none %}
+                    <option value="">{{ empty_value|trans }}</option>
+                {% endif %}
+                {% if preferred_choices|length > 0 %}
+                    {% set options = preferred_choices %}
+                    {{ block('choice_widget_options') }}
+                    {% if choices|length > 0 and separator is not none %}
+                        <option disabled="disabled">{{ separator }}</option>
+                    {% endif %}
+                {% endif %}
+                {% set options = choices %}
+                {{ block('choice_widget_options') }}
+            </select>
+        {% endif %}
+    {% endspaceless %}
+{% endblock choice_widget %}
+
+{% block radio_widget %}
+    {% spaceless %}
+          {% autoescape %}
+        <label for="{{ id }}">{{ label|raw }}<br>
+            {% endautoescape %}
+        <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        </label>
+    {% endspaceless %}
+{% endblock radio_widget %}
+
+{% block checkbox_widget %}
+    {% spaceless %}
+        <label  for="{{ id }}"><input style="margin-right: 5px;" type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />{{ label|trans }}</label>
+    {% endspaceless %}
+{% endblock checkbox_widget %}
+
+{% block _import_email_form_type_emails_entry_row %}
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-5">
+            {{ form_row(form.nom) }}
+        </div>
+        <div class="col-xs-5">
+            {{ form_row(form.email) }}
+        </div>
+
+    </div>
+
+    {{ form_rest(form) }}
+{% endblock %}
+

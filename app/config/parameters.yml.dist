@@ -1,0 +1,36 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+    delivery_address:  ~ #Used to intercept every emails for local development
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    #Binaries paths
+    node_bin_path: /usr/local/bin/node
+    node_lib_paths: [/usr/local/lib/node, /usr/local/lib/node_modules]
+    uglify_js_path: /usr/local/bin/uglifyjs
+    uglify_css_path: /usr/local/bin/uglifycss
+    ruby_path: /usr/bin/ruby
+    sass_path: /usr/bin/sass
+
+    request_context.base_path: ''
+    router.request_context.base_url: ''
+
+    contact_email: ~
+    prod_email: addressbook@yopmail.com
+    basePath: http://www.addressbook.deve

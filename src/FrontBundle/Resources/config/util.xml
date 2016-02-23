@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="menu.renderer" parent="knp_menu.renderer.twig">
+            <tag name="knp_menu.renderer" alias="front" />
+            <argument index="1">FrontBundle:Menu:main.html.twig</argument>
+            <argument index="3" type="collection">
+                <argument key="currentClass">active</argument>
+            </argument>
+        </service>
+    </services>
+</container>

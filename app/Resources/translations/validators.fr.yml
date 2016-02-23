@@ -1,0 +1,15 @@
+fos_user:
+    first_name:
+        not_blank: Veuillez renseigner le prénom s'il vous plait
+    last_name:
+        not_blank: Veuillez renseigner le nom de famille s'il vous plait
+    password:
+        mismatch: Les deux mots de passe ne sont pas identiques
+
+user:
+    first_name:
+        not_blank: Veuillez renseigner le prénom s'il vous plait
+    last_name:
+        not_blank: Veuillez renseigner le nom de famille s'il vous plait
+    password:
+        mismatch: Les deux mots de passe ne sont pas identiques

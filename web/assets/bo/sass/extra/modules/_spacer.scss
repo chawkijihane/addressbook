@@ -1,0 +1,120 @@
+// ------------------------------
+// - Spacer module
+// ------------------------------
+
+// No margin
+// ------------------------------
+.no-margin {
+    margin: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-margin-left {
+    margin-left: 0;
+}
+
+.no-margin-right {
+    margin-right: 0;
+}
+
+
+// Margin
+// ------------------------------
+.margin-xs {
+    margin: $spacer-xs-value;
+}
+
+.margin-sm {
+    margin: $spacer-sm-value;
+}
+
+.margin-md {
+    margin: $spacer-md-value;
+}
+
+.margin-lg {
+    margin: $spacer-lg-value;
+}
+
+
+// Margin Top
+// ------------------------------
+.margin-top-xs {
+    margin-top: $spacer-xs-value;
+}
+
+.margin-top-sm {
+    margin-top: $spacer-sm-value;
+}
+
+.margin-top-md {
+    margin-top: $spacer-md-value;
+}
+
+.margin-top-lg {
+    margin-top: $spacer-lg-value;
+}
+
+
+// Margin Bottom
+// ------------------------------
+.margin-bottom-xs {
+    margin-bottom: $spacer-xs-value;
+}
+
+.margin-bottom-sm {
+    margin-bottom: $spacer-sm-value;
+}
+
+.margin-bottom-md {
+    margin-bottom: $spacer-md-value;
+}
+
+.margin-bottom-lg {
+    margin-bottom: $spacer-lg-value;
+}
+
+
+// Margin Left
+// ------------------------------
+.margin-left-xs {
+    margin-left: $spacer-xs-value;
+}
+
+.margin-left-sm {
+    margin-left: $spacer-sm-value;
+}
+
+.margin-left-md {
+    margin-left: $spacer-md-value;
+}
+
+.margin-left-lg {
+    margin-left: $spacer-lg-value;
+}
+
+
+// Margin Right
+// ------------------------------
+.margin-right-xs {
+    margin-right: $spacer-xs-value;
+}
+
+.margin-right-sm {
+    margin-right: $spacer-sm-value;
+}
+
+.margin-right-md {
+    margin-right: $spacer-md-value;
+}
+
+.margin-right-lg {
+    margin-right: $spacer-lg-value;
+}

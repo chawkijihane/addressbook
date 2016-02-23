@@ -1,0 +1,11 @@
+// ------------------------------
+// - Button Module
+// ------------------------------
+
+.btn.disabled {
+    @include opacity(0.3);
+
+    &[data-toggle="tooltip"] {
+        pointer-events: auto;
+    }
+}

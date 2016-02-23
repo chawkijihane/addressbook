@@ -1,0 +1,22 @@
+// ------------------------------
+// - Layout
+// ------------------------------
+
+.main {
+    margin: 100px auto;
+    width: 600px;
+
+    .title {
+        font-size: 80px;
+        color: $color-white;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .content {
+        font-size: 20px;
+        color: $color-white;
+        line-height: 1.5;
+        text-align: center;
+    }
+}

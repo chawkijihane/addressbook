@@ -1,0 +1,73 @@
+{% extends 'FrontBundle::layout_logged.html.twig' %}
+{% block page_title %}AddressBook - Modification profil{% endblock %}
+{% block meta_description %}Modification de votre profil.{% endblock %}
+{% block meta_keywords %}carnet adresse, notebook, vcard, addresses online, contact{% endblock %}
+{% block content_page %}
+    <form class="form-large" action="{{ path('front_compte_index') }}"
+          method="POST" {{ form_enctype(form) }} novalidate="novalidate">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h2>
+                            <i class="fa fa-home"></i>
+                            <span class="break">Modification de votre profil</span>
+                        </h2>
+                    </div>
+                    <div class="box-content">
+                        {{ form_errors(form) }}
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.civilite) }}</span>
+                            <span>{{ form_errors(form.civilite) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.prenom) }}</span>
+                            <span>{{ form_errors(form.prenom) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.nom) }}</span>
+                            <span>{{ form_errors(form.nom) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.email) }}</span>
+                            <span>{{ form_errors(form.email) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.telephone) }}</span>
+                            <span>{{ form_errors(form.telephone) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.adresse) }}</span>
+                            <span>{{ form_errors(form.adresse) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.zip) }}</span>
+                            <span>{{ form_errors(form.zip) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.ville) }}</span>
+                            <span>{{ form_errors(form.ville) }}</span>
+                        </div>
+                        <div class="col-md-12 form-group clearfix">
+                            <span>{{ form_widget(form.website) }}</span>
+                            <span>{{ form_errors(form.website) }}</span>
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="box-content">
+                                {{ form_rest(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ path('front_address_index') }}" class="btn btn-md btn-info">
+                    <i class="fa fa-arrow-left"></i> Retour
+                </a>
+                <button type="submit" class="submit btn btn-md btn-warning" style="float:right">
+                    <i class="fa fa-pencil"></i> Modifier
+                </button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

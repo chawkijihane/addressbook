@@ -1,0 +1,24 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="form.type.registration" class="FrontBundle\Form\Type\RegistrationType">
+            <tag name="form.type" alias="registration" />
+        </service>
+
+        <service id="core.form.type_extension.collection_button_text" class="CoreBundle\Form\Extension\CollectionButtonTextTypeExtension">
+            <tag name="form.type_extension" alias="collection" />
+        </service>
+
+        <service id="form.type.address" class="FrontBundle\Form\Type\AddressFormType">
+            <tag name="form.type" alias="address_form_type" />
+        </service>
+
+        <service id="form.type.profil" class="FrontBundle\Form\Type\ProfilFormType">
+            <tag name="form.type" alias="profil_form_type" />
+        </service>
+
+    </services>
+
+</container>

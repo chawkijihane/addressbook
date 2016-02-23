@@ -1,0 +1,11 @@
+parameters:
+#    dmp_admin.example.class: DMP\Bundle\AdminBundle\Example
+
+services:
+    google_analytics_extension:
+        class: CoreBundle\Twig\Extension\GoogleAnalyticsExtension
+        arguments:
+            - @service_container
+        public: true
+        tags:
+            - { name: twig.extension }

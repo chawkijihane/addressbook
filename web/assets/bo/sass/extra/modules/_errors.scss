@@ -1,0 +1,36 @@
+// ------------------------------
+// Errors Module
+// ------------------------------
+
+
+// Core
+// ------------------------------
+.errors {
+    background: lighten($red, 30%);
+    border-left: 2px solid $red;
+    margin-top: 5px;
+}
+
+.errors .title {
+    margin-bottom: 1px;
+
+    span {
+        background: $red;
+        padding: 3px 10px;
+        color: white;
+        display: inline-block;
+        font-size: 12px;
+    }
+}
+
+.errors .item {
+    border-bottom: 1px solid darken($color-white, 2%);
+    margin-bottom: 1px;
+    position: relative;
+    padding: 5px;
+    color: $color-dark-gray;
+}
+
+.task.last {
+    border-bottom: 1px solid transparent;
+}

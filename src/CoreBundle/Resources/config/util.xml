@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="util.default_base_url">
+            %router.request_context.scheme%://%router.request_context.host%%request_context.base_path%
+        </parameter>
+
+    </parameters>
+
+    <services>
+
+        <service id="util.base_url_resolver.request" class="CoreBundle\Util\RequestUrlResolver" public="false">
+            <argument type="service" id="service_container"/>
+            <argument>%util.default_base_url%</argument>
+        </service>
+
+        <service id="util.base_url_resolver.uploads.local" class="CoreBundle\Util\SuffixedUrlResolver" public="false">
+            <argument type="service" id="util.base_url_resolver.request"/>
+            <argument>uploads</argument>
+        </service>
+
+        <service id="core.listener.redirection" class="CoreBundle\Redirection\UserRedirection">
+            <argument type="service" id="router"/>
+        </service>
+
+    </services>
+
+</container>
+

@@ -1,0 +1,62 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        FOS\UserBundle\Model\User:
+            algorithm: pbkdf2
+            hash_algorithm: sha512
+            encode_as_base64: true
+            iterations: 1000
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/mon-compte/, role: ROLE_USER }
+        - { path: ^/address/, role: ROLE_USER }
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        frontend_logging:
+            pattern: ^/nelmio-js-logger/log$
+            security: false
+
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: security.csrf.token_manager
+                #success_handler: core.listener.redirection
+
+            remember_me:
+                always_remember_me: true
+                secure: false
+                key: %secret%
+                path: /
+            logout: ~
+            anonymous: ~
+            switch_user: ~
+            oauth:
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                    twitter:            "/login/check-twitter"
+                    google:             "/login/check-google"
+                login_path:        /login
+                failure_path:      /login
+
+                oauth_user_provider:
+                    #this is my custom user provider, created from FOSUBUserProvider - will manage the
+                    #automatic user registration on your site, with data from the provider (facebook. google, etc.)
+                    service: my_user_provider

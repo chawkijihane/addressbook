@@ -1,0 +1,39 @@
+// ------------------------------
+// - LESS Variables
+// ------------------------------
+
+// TODO - Rename this vars using dashes
+
+// Colors
+// -------------------------
+$color-dark-gray: #2d323d;
+$color-white: #FFFFFF;
+$red: red;
+
+
+// Typography
+// -------------------------
+$normalFontSize:   1em;
+$normalLineHeight: 1.5;
+$baseFontFamily:   "Helvetica Neue", "Helvetica", Arial, sans-serif;
+
+
+// General
+// -------------------------
+$link-color-active: $color-dark-gray;
+
+
+// Modules
+// -------------------------
+$spacer-xs-value: 5px;
+$spacer-sm-value: 10px;
+$spacer-md-value: 15px;
+$spacer-lg-value: 20px;
+
+
+// Paths
+// -------------------------
+$img-path: "../../../img";
+$vendor-asset-path: '../../vendor';
+$font-path: '../../../fonts';
+$fa-font-path: $font-path + '/FontAwesome' !default;

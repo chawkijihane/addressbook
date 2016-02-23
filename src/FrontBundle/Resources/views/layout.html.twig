@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+{% block page_title %}{% endblock %}
+{% block stylesheet_head %}
+    {% stylesheets
+    'assets/front/sass/main.scss'
+    'assets/vendor/font-awesome/css/font-awesome.css'
+    'assets/vendor/jquery-ui/themes/redmond/jquery-ui.css'
+    filter='scss,?uglifycss,cssrewrite' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+    {% endstylesheets %}
+    {% javascripts
+    'assets/vendor/jquery/dist/jquery.js'
+    'assets/vendor/jquery-ui/jquery-ui.js'
+    'bundles/fosjsrouting/js/router.js'
+    'assets/vendor/moment/moment.js'
+    filter='?uglifyjs2' combine=true %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+
+{% endblock %}
+{% block body %}
+    {% block content '' %}
+{% endblock %}
+
+{% block javascripts_footer %}
+    {% javascripts
+    'assets/vendor/bootstrap-sass/assets/javascripts/bootstrap.js'
+    'assets/front/js/confirm_action.js'
+    'assets/front/js/collection_handler.js'
+    filter='?uglifyjs2'
+    combine=true %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}

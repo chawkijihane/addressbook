@@ -1,0 +1,139 @@
+FOS\UserBundle\Model\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [usernameCanonical]
+            errorPath: username
+            message: 'fos_user.email.already_used'
+            groups: [Email]
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [emailCanonical]
+            errorPath: email
+            message: 'fos_user.email.already_used'
+            groups: [Email]
+
+    properties:
+        username:
+            - NotBlank:
+                message: fos_user.username.blank
+                groups: [Default]
+        email:
+            - NotBlank:
+                message: fos_user.email.blank
+                groups: [Default, UserPro, Email]
+        plainPassword:
+            - NotBlank: { message: "Merci de renseigner un mot de passe"}
+            - Length:
+                min: 8
+                max: 255
+                minMessage: "Votre mot de passe doit faire au moins {{ limit }} caractères."
+                maxMessage: "Votre mot de passe est trop long"
+                groups: [Registration,Default]
+
+CoreBundle\Entity\User:
+    properties:
+        civilite:
+            - NotBlank:
+                message: "Vous devez sélectionner votre civilité."
+                groups: [EditProfile]
+        nom:
+            - NotBlank:
+                message: "Vous devez renseigner votre nom."
+                groups: [EditProfile]
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Votre nom doit avoir au moins {{ limit }} caractères."
+                maxMessage: "Votre nom est trop long"
+                groups: [EditProfile]
+            - Regex:
+                pattern: '/[^0-9]/'
+                match: true
+                message: "Votre nom n'est pas valide"
+                groups: [EditProfile]
+        prenom:
+            - NotBlank:
+                message: "Vous devez renseigner votre prénom."
+                groups: [EditProfile]
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Votre prénom doit avoir au moins {{ limit }} caractères."
+                maxMessage: "Votre nom est trop long"
+                groups: [EditProfile]
+            - Regex:
+                pattern: '/[^0-9]/'
+                match: true
+                message: "Votre prénom n'est pas valide"
+                groups: [EditProfile]
+        telephone:
+            - NotBlank:
+                message: "Vous devez renseigner votre téléphone."
+                groups: [EditProfile]
+            - Length:
+                min: 10
+                max: 10
+                groups: [Profile, EditProfile]
+            - Regex:
+                pattern: "/^0[0-9]([ .-]?[0-9]{2}){4}$/"
+                groups: [EditProfile]
+        emails:
+            - Valid: { }
+
+CoreBundle\Entity\Email:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [email]
+            errorPath: email
+            message: "Le contact est déjà dans votre carnet d'adresse."
+            groups: [AddAddress]
+    properties:
+       nom:
+            -  NotBlank:
+                message: "Vous devez renseigner votre nom."
+                groups: [AddAddress, EditAddress]
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Votre nom doit avoir au moins {{ limit }} caractères."
+                maxMessage: "Votre nom est trop long"
+                groups: [AddAddress, EditAddress]
+            - Regex:
+                pattern: '/[^0-9]/'
+                match: true
+                message: "Votre nom n'est pas valide"
+                groups: [AddAddress, EditAddress]
+
+       prenom:
+            - NotBlank:
+                message: "Vous devez renseigner votre prénom."
+                groups: [AddAddress, EditAddress]
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Votre prénom doit avoir au moins {{ limit }} caractères."
+                maxMessage: "Votre nom est trop long"
+                groups: [AddAddress, EditAddress]
+            - Regex:
+                pattern: '/[^0-9]/'
+                match: true
+                message: "Votre prénom n'est pas valide"
+                groups: [AddAddress, EditAddress]
+
+       telephone:
+            - NotBlank:
+                message: "Vous devez renseigner votre téléphone."
+                groups: [AddAddress, EditAddress]
+            - Length:
+                min: 10
+                max: 10
+                groups: [AddAddress, EditAddress]
+            - Regex:
+                pattern: "/^0[0-9]([ .-]?[0-9]{2}){4}$/"
+                groups: [AddAddress, EditAddress]
+
+       email:
+            - NotBlank:
+                message: "Vous devez renseigner un Email."
+                groups: [AddAddress, EditAddress]
+            - Email:
+                message: "'{{ value }}' n'est pas un email valide."

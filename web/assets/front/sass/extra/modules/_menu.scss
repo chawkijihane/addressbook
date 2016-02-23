@@ -1,0 +1,25 @@
+
+
+#compte{
+  .nav > li > a {
+    padding: 0px;
+  }
+  .nav-pills > li + li {
+    margin-left: 0px;
+  }
+  .dropdown-menu {
+    width: 100%;
+    background-color: #7591a7!important;
+  }
+  .nav li a:not(.menu_actif) {
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #39586E;
+  }
+
+  .disabled{
+    cursor: not-allowed;
+  }
+}

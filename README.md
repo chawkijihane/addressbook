@@ -1,3 +1,18 @@
+Un simple carnet d'adresses en ligne réalisé sous Symfony2.<br>
+<br>
+Les fonctionnalités sont les suivantes :<br>
+<br>
+Login / Inscription :<br>
+·       Identification (Inscription/Connexion/Déconnexion) de l'utilisateur par login/mot de passe (FOSUserbundle).<br>
+<br>
+Dashboard :<br>
+·       Inviter/Ajouter/Afficher/Lister/EditerSupprimer des contacts de son carnet d'adresses (membres qui pourront aussi se connecter à leur tour). <br>
+·       Afficher/Modifier ses informations (e-mail / adresse / téléphone / site web).<br>
+<br>
+Mailing :<br>
+·       Confirmation inscription/invitation<br>
+<br>
+<br>
 <b>Prérequis</b> : rapatrier le projet ;)
 <br>
  ========================================<br>

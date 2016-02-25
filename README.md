@@ -108,3 +108,5 @@ Enjoy ! <br>
 ![Panel with data](https://github.com/chawkijihane/addressbook/blob/master/wiki/panel_membre_and_not.PNG)
 ![Contact show](https://github.com/chawkijihane/addressbook/blob/master/wiki/contact_detail.PNG)
 ![Update profil](https://github.com/chawkijihane/addressbook/blob/master/wiki/edit_profil.PNG)
+![Template mail register](https://github.com/chawkijihane/addressbook/blob/master/wiki/template-mail-register.PNG)
+![Template mail invitation](https://github.com/chawkijihane/addressbook/blob/master/wiki/template-mail-invitation.PNG)

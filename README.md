@@ -1,6 +1,11 @@
+<b>Contexte</b> :<br>
 Un simple carnet d'adresses en ligne réalisé sous Symfony2.<br>
+Prérequis (détail plus bas) :<br>
+Composer<br>
+NodeJS pour installer uglify-js, uglifycss et bower<br>
+Ruby pour installer saas<br>
 <br>
-Les fonctionnalités sont les suivantes :<br>
+<b>Les fonctionnalités sont les suivantes</b> :<br>
 <br>
 Login / Inscription :<br>
 ·       Identification (Inscription/Connexion/Déconnexion) de l'utilisateur par login/mot de passe (FOSUserbundle).<br>

@@ -171,7 +171,7 @@ class AddressController extends Controller
 
         $this->get('session')->getFlashBag()->add('success', "Le contact a été supprimé de votre carnet d'adresse.");
 
-        return $this->redirect($request->server->get('HTTP_REFERER'));
+        return $this->redirect($this->generateUrl('front_address_index'));
     }
 
     /**

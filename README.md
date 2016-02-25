@@ -101,4 +101,10 @@ Rendez-vous sur : http://addressbook.deve/web/app_dev.php/<br>
 Enjoy ! <br>
 <br>
 ![Login Page](https://github.com/chawkijihane/addressbook/blob/master/wiki/login_page.PNG)
-![Login Page](https://github.com/chawkijihane/addressbook/blob/master/wiki/complete_profil_login.PNG)
+![Complete login Page](https://github.com/chawkijihane/addressbook/blob/master/wiki/complete_profil_login.PNG)
+![Panel without data](https://github.com/chawkijihane/addressbook/blob/master/wiki/add_contact_empty.PNG)
+![Add contact](https://github.com/chawkijihane/addressbook/blob/master/wiki/add_contact.PNG)
+![Contact already exist](https://github.com/chawkijihane/addressbook/blob/master/wiki/contact_already_exist.PNG)
+![Panel with data](https://github.com/chawkijihane/addressbook/blob/master/wiki/panel_membre_and_not.PNG)
+![Contact show](https://github.com/chawkijihane/addressbook/blob/master/wiki/contact_detail.PNG)
+![Update profil](https://github.com/chawkijihane/addressbook/blob/master/wiki/edit_profil.PNG)

@@ -1,6 +1,7 @@
 <b>Contexte</b> :<br>
 Un simple carnet d'adresses en ligne réalisé sous Symfony2.<br>
-Prérequis (détail plus bas) :<br>
+<br>
+<b>Prérequis</b> (détail plus bas) :<br>
 Composer<br>
 NodeJS pour installer uglify-js, uglifycss et bower<br>
 Ruby pour installer saas<br>

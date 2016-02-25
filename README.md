@@ -95,3 +95,7 @@ Ajouter :<br>
 -> Se placer à la racine du projet puis :<br>
 <br>
 app/console doctrine:schema:update --force<br>
+<br>
+Rendez-vous sur : http://addressbook.deve/web/app_dev.php/<br>
+<br>
+Enjoy ! <br>
